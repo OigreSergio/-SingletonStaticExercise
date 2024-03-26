@@ -8,8 +8,8 @@ class Main {
         user1.printUserInfo();
         System.out.println();
 
-        user2.setName("John Doe");
-        user2.setAge(30);
+        user2.setName("Sergio sh");
+        user2.setAge(22);
 
         System.out.println("User 2 - Modified Information:");
         user2.printUserInfo();
