@@ -1,18 +1,17 @@
-public class Main {
-    private static User person;
-
-    public static User getPerson() {
-        if (person == null) {
-            person = new User("Sergio",33);
-        }
-        return person;
-    }
-
+class Main {
     public static void main(String[] args) {
-        User codPlayer = new User("Mhohamed",54);
-        System.out.println(codPlayer);
 
-        User genericUser = getPerson();
-        System.out.println(genericUser);
+        User user1 = User.getInstance();
+        User user2 = User.getInstance();
+
+        System.out.println("User 1 - Default Information:");
+        user1.printUserInfo();
+        System.out.println();
+
+        user2.setName("John Doe");
+        user2.setAge(30);
+
+        System.out.println("User 2 - Modified Information:");
+        user2.printUserInfo();
     }
 }

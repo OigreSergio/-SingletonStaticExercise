@@ -1,12 +1,19 @@
 public class User {
     private String name;
     private int age;
+    private static User instance;
 
-    public User(String name, int age) {
+    private User() {
+        this.name = "Default Name";
+        this.age = 0;
+    }
 
-        this.name = name;
+    public static User getInstance() {
 
-        this.age = age;
+        if (instance == null) {
+            instance = new User();
+        }
+        return instance;
     }
 
     public String getName() {
@@ -25,11 +32,8 @@ public class User {
         this.age = age;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                '}';
+    public void printUserInfo() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
     }
 }
